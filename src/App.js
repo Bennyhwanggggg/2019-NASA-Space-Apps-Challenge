@@ -1,10 +1,9 @@
-import React, {useState} from 'react';
-import './App.css';
+import React, { useState } from 'react';
 import { Canvas, useFrame } from 'react-three-fiber';
-// eslint-disable-next-line no-unused-vars
-import Earth from './components/Earth';
+import Planet from './components/Planet';
 import * as THREE from 'three';
 import { Light } from './components/Light';
+import { Controls } from './components/Controls';
 
 function App() {
   const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
@@ -13,14 +12,12 @@ function App() {
   
   const [cam, setCam] = useState(camera);
 
-  useFrame(() => {
-  });
-
   return (
     <div className="main">
       <Canvas camera={cam}>
         <Light />
-        <Earth />
+        <Controls/>
+        <Planet />
       </Canvas>
     </div>
   );
