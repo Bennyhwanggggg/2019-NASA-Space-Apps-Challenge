@@ -5,7 +5,10 @@
   "dependencies": {
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
-    "react-scripts": "3.2.0"
+    "react-scripts": "3.2.0",
+    "react-spring": "^8.0.27",
+    "react-three-fiber": "^3.0.2",
+    "three": "^0.109.0"
   },
   "scripts": {
     "start": "react-scripts start",
