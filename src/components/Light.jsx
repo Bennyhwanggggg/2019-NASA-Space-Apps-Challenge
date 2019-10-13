@@ -4,7 +4,7 @@ import * as THREE from 'three'
 export const Light = () => {
     //Create a PointLight and turn on shadows for the light
     const light = new THREE.DirectionalLight(0xffffff, 1, 100)
-    light.position.set(100, 100, 100)
+    light.position.set(100, 150, 150)
     light.castShadow = true // default false
     //Set up shadow properties for the light
     light.shadow.mapSize.width = 5120 // default
@@ -16,4 +16,4 @@ export const Light = () => {
     light.shadow.camera.left = -100 // default
     light.shadow.camera.bottom = 100 // default
     return <primitive object={light} />
-  }
+}

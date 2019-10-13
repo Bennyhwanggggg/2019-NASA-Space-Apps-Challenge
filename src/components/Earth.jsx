@@ -1,29 +1,26 @@
-import React, {useRef} from 'react';
+import React, { useRef, useState } from 'react';
+import { useSpring, a } from 'react-spring/three';
 import { useFrame } from 'react-three-fiber';
 
 const Earth = props => {
+
+    const [active, setActive] = useState(false);
+    const properties = useSpring({
+        scale: active ? [1.5, 1.5, 1.5] : [1, 1, 1],
+    })
+
     const meshRef = useRef();
     return (
-        <mesh ref={meshRef}>
+        <a.mesh ref={meshRef}
+            onClick={() => setActive(!active)}
+            scale={properties.scale}>
             <sphereBufferGeometry
                 attach="geometry"
                 args={[1, 25, 25]}
             />
             <meshPhongMaterial attach="material" color="hotpink" />
-        </mesh>
+        </a.mesh>
     );
 }
-
-// function Thing() {
-//     return (
-//       <mesh
-//         onClick={e => console.log('click')}
-//         onPointerOver={e => console.log('hover')}
-//         onPointerOut={e => console.log('unhover')}>
-//         <planeBufferGeometry attach="geometry" args={[1, 1]} />
-//         <meshBasicMaterial attach="material" color="hotpink" opacity={0.5} transparent />
-//       </mesh>
-//     )
-//   }
 
 export default Earth;
