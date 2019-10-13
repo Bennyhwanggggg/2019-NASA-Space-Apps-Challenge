@@ -1,13 +1,14 @@
-import {a , useSpring} from 'react-spring/three';
 import React from 'react';
 
 const Earth = props => {
-    const [spring] = useSpring(() => ({ position: [0, 0, 0], config: { mass: 4, friction: 50, tension: 1500 } }));
     return (
-        <a.mesh {...spring}>
-            <sphereBufferGeometry attach="geometry" args={[5, 32, 32]} />
+        <mesh>
+            <sphereBufferGeometry
+                attach="geometry"
+                args={[3, 34, 34]}
+            />
             <meshBasicMaterial attach="material" color="hotpink" />
-        </a.mesh>
+        </mesh>
     );
 }
 
