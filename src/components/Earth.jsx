@@ -1,13 +1,15 @@
-import React from 'react';
+import React, {useRef} from 'react';
 
 const Earth = props => {
+    const meshRef = useRef();
+
     return (
-        <mesh>
+        <mesh ref={meshRef}>
             <sphereBufferGeometry
                 attach="geometry"
                 args={[3, 34, 34]}
             />
-            <meshBasicMaterial attach="material" color="hotpink" />
+            <meshPhongMaterial attach="material" color="hotpink" />
         </mesh>
     );
 }
