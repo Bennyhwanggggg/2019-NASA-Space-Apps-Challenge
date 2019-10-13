@@ -1,13 +1,13 @@
 import React, {useRef} from 'react';
+import { useFrame } from 'react-three-fiber';
 
 const Earth = props => {
     const meshRef = useRef();
-
     return (
         <mesh ref={meshRef}>
             <sphereBufferGeometry
                 attach="geometry"
-                args={[3, 34, 34]}
+                args={[1, 25, 25]}
             />
             <meshPhongMaterial attach="material" color="hotpink" />
         </mesh>
