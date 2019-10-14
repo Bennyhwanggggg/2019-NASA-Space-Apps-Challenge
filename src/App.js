@@ -5,7 +5,6 @@ import * as THREE from 'three';
 import { Light } from './components/Light';
 import { Controls } from './components/Controls';
 import { Chicken } from './components/Chicken';
-import { Loading } from './components/Loading';
 
 function App() {
     const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
@@ -23,7 +22,6 @@ function App() {
                     gl.shadowMap.type = THREE.PCFSoftShadowMap
                 }}>
                 <Light />
-                {/* <Loading /> */}
                 <Controls
                     planetCenter={planetCenter}
                 />
