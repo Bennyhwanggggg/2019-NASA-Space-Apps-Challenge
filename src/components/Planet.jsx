@@ -22,6 +22,10 @@ const Planet = props => {
         <a.mesh ref={meshRef}
             onClick={() => setActive(!active)}
             scale={properties.scale}>
+            <ambientLight 
+                intensity={0.2}
+                color={0x404040}
+            />
             <sphereBufferGeometry
                 attach="geometry"
                 args={[1, 25, 25]}
