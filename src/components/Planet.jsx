@@ -1,4 +1,5 @@
 import React, { useRef, useState } from 'react';
+import * as THREE from 'three';
 import { useSpring, a } from 'react-spring/three';
 import { useRender, extend, useThree } from 'react-three-fiber';
 
@@ -21,6 +22,7 @@ const Planet = props => {
     return (
         <a.mesh ref={meshRef}
             onClick={() => setActive(!active)}
+            position={props.planetCenter}
             scale={properties.scale}
             recieveShadow>
             <ambientLight 
@@ -29,7 +31,7 @@ const Planet = props => {
             />
             <sphereBufferGeometry
                 attach="geometry"
-                args={[1, 25, 25]}
+                args={[2, 25, 25]}
             />
             <meshPhongMaterial attach="material" color="grey" />
         </a.mesh>

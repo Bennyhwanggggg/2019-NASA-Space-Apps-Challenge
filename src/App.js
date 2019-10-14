@@ -11,6 +11,8 @@ function App() {
     camera.position.set(5, 5, 5);
     camera.lookAt(new THREE.Vector3(0, 0, 0));
 
+    const planetCenter = new THREE.Vector3(0, -3, 0);
+
     return (
         <div className="main">
             <Canvas 
@@ -20,9 +22,15 @@ function App() {
                     gl.shadowMap.type = THREE.PCFSoftShadowMap
                 }}>
                 <Light />
-                <Controls/>
-                <Planet />
-                <Chicken />
+                <Controls
+                    planetCenter={planetCenter}
+                />
+                <group>
+                    <Planet 
+                        planetCenter={planetCenter}
+                    />
+                    <Chicken />
+                </group>
             </Canvas>
         </div>
     );
