@@ -1,4 +1,5 @@
 import React, { useRef, useState } from 'react';
+import * as THREE from 'three';
 import { useSpring, a } from 'react-spring/three';
 import { useRender, extend, useThree } from 'react-three-fiber';
 
@@ -7,10 +8,10 @@ const Planet = props => {
 
     const meshRef = useRef();
 
-    const [active, setActive] = useState(false);
-    const properties = useSpring({
-        scale: active ? [1.5, 1.5, 1.5] : [1, 1, 1],
-    });
+    // const [active, setActive] = useState(false);
+    // const properties = useSpring({
+    //     scale: active ? [1.5, 1.5, 1.5] : [1, 1, 1],
+    // });
 
     // To make object rotate by itself sample code
     // useRender(() => {
@@ -20,15 +21,21 @@ const Planet = props => {
 
     return (
         <a.mesh ref={meshRef}
-            onClick={() => setActive(!active)}
-            scale={properties.scale}>
+            // onClick={() => setActive(!active)}
+            position={props.planetCenter}
+            // scale={properties.scale}
+            recieveShadow>
+            <ambientLight 
+                intensity={0.3}
+                color={0x404040}
+            />
             <sphereBufferGeometry
                 attach="geometry"
-                args={[1, 25, 25]}
+                args={[2, 25, 25]}
             />
             <meshPhongMaterial attach="material" color="grey" />
         </a.mesh>
     );
-}
+};
 
 export default Planet;

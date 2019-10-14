@@ -1,17 +1,23 @@
 import React, { useRef } from 'react';
 import { useThree, useRender, extend } from 'react-three-fiber';
-import { TrackballControls } from 'three/examples/jsm/controls/TrackballControls';
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 
-extend({ TrackballControls });
+extend({ OrbitControls });
 
 export const Controls = props => {
   const { gl, camera } = useThree()
   const ref = useRef()
   useRender(() => ref.current.update())
-  return <trackballControls 
+  
+  return <orbitControls 
             ref={ref} 
+            autoRotate
+            // maxPolarAngle={Math.PI}
+            // minPolarAngle={Math.PI}
+            // maxAzimuthAngle={Math.PI / 3}
+            target = {props.planetCenter}
             args={[camera, gl.domElement]} 
             {...props}
-            rotateSpeed={5}
+            rotateSpeed={1}
          />
 };
