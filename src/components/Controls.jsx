@@ -8,6 +8,7 @@ export const Controls = props => {
   const { gl, camera } = useThree()
   const ref = useRef()
   useRender(() => ref.current.update())
+  
   return <orbitControls 
             ref={ref} 
             autoRotate
