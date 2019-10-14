@@ -34,6 +34,6 @@ const Planet = props => {
             <meshPhongMaterial attach="material" color="grey" />
         </a.mesh>
     );
-}
+};
 
 export default Planet;
