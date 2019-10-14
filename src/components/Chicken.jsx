@@ -14,5 +14,5 @@ export const Chicken = props => {
     return model ? <primitive 
                         object={model.scene} 
                         scale={[0.001, 0.001, 0.001]}
-                        position={[0, -1, 0]}/> : null
+                        position={[0, -0.95, 0]}/> : null
 };
