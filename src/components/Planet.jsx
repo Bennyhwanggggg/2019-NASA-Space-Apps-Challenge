@@ -8,10 +8,10 @@ const Planet = props => {
 
     const meshRef = useRef();
 
-    const [active, setActive] = useState(false);
-    const properties = useSpring({
-        scale: active ? [1.5, 1.5, 1.5] : [1, 1, 1],
-    });
+    // const [active, setActive] = useState(false);
+    // const properties = useSpring({
+    //     scale: active ? [1.5, 1.5, 1.5] : [1, 1, 1],
+    // });
 
     // To make object rotate by itself sample code
     // useRender(() => {
@@ -21,9 +21,9 @@ const Planet = props => {
 
     return (
         <a.mesh ref={meshRef}
-            onClick={() => setActive(!active)}
+            // onClick={() => setActive(!active)}
             position={props.planetCenter}
-            scale={properties.scale}
+            // scale={properties.scale}
             recieveShadow>
             <ambientLight 
                 intensity={0.3}

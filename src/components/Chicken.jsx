@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 
-const modelURL = './assets/chicken.gltf';
+const modelURL = './assets/animatedChicken.gltf';
 
 export const Chicken = props => {
 
@@ -11,5 +11,8 @@ export const Chicken = props => {
         new GLTFLoader().load(modelURL, setModel);
     }, [])
 
-    return model ? <primitive object={model.scene}/> : null
+    return model ? <primitive 
+                        object={model.scene} 
+                        scale={[0.001, 0.001, 0.001]}
+                        position={[0, -1, 0]}/> : null
 };
