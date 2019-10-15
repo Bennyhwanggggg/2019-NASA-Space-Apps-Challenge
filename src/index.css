@@ -1,6 +1,7 @@
 html,
 body,
 #root,
+main,
 canvas {
   margin: 0;
   height: 100%;
@@ -10,6 +11,7 @@ canvas {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: 	#110f1c;
 }
 
 code {

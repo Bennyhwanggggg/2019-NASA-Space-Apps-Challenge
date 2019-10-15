@@ -1,24 +1,39 @@
-import React, { useState } from 'react';
-import { Canvas, useFrame } from 'react-three-fiber';
-import Earth from './components/Earth';
+import React from 'react';
+import { Canvas } from 'react-three-fiber';
+import Planet from './components/Planet';
 import * as THREE from 'three';
 import { Light } from './components/Light';
+import { Controls } from './components/Controls';
+import { Chicken } from './components/Chicken';
 
 function App() {
-  const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
-  camera.position.set(5, 5, 5);
-  camera.lookAt(new THREE.Vector3(0, 0, 0));
-  
-  const [cam, setCam] = useState(camera);
+    const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
+    camera.position.set(5, 5, 5);
+    camera.lookAt(new THREE.Vector3(0, 0, 0));
 
-  return (
-    <div className="main">
-      <Canvas camera={cam}>
-        <Light />
-        <Earth />
-      </Canvas>
-    </div>
-  );
-}
+    const planetCenter = new THREE.Vector3(0, -3, 0);
+
+    return (
+        <div className="main">
+            <Canvas 
+                camera={camera}
+                onCreated={({ gl }) => {
+                    gl.shadowMap.enabled = true
+                    gl.shadowMap.type = THREE.PCFSoftShadowMap
+                }}>
+                <Light />
+                <Controls
+                    planetCenter={planetCenter}
+                />
+                <group>
+                    <Planet 
+                        planetCenter={planetCenter}
+                    />
+                    <Chicken />
+                </group>
+            </Canvas>
+        </div>
+    );
+};
 
 export default App;
