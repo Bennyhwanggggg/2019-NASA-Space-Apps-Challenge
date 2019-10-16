@@ -11,7 +11,7 @@ export const Controls = props => {
   
   return <orbitControls 
             ref={ref} 
-            autoRotate
+            // autoRotate
             // maxPolarAngle={Math.PI}
             // minPolarAngle={Math.PI}
             // maxAzimuthAngle={Math.PI / 3}
