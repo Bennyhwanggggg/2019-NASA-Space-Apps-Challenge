@@ -5,6 +5,7 @@ import * as THREE from 'three';
 import { Light } from './components/Light';
 import { Controls } from './components/Controls';
 import { Chicken } from './components/Chicken';
+import Cube from './components/Cube';
 
 function App() {
     const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
@@ -29,7 +30,8 @@ function App() {
                     <Planet 
                         planetCenter={planetCenter}
                     />
-                    <Chicken />
+                    {/* <Chicken /> */}
+                    <Cube></Cube>
                 </group>
             </Canvas>
         </div>

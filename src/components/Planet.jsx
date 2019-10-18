@@ -31,9 +31,16 @@ const Planet = props => {
             />
             <sphereBufferGeometry
                 attach="geometry"
-                args={[2, 25, 25]}
+                args={[3, 64, 64]}
             />
             <meshPhongMaterial attach="material" color="grey" />
+            {/* <a.meshBasicMaterial attachArray="material" color="red" />
+            <a.meshBasicMaterial attachArray="material" color="green" />
+            <a.meshBasicMaterial attachArray="material" color="blue" />
+            <a.meshBasicMaterial attachArray="material" color="cyan" />
+            <a.meshBasicMaterial attachArray="material" color="magenta" />
+            <a.meshBasicMaterial attachArray="material" color="yellow" />
+            <a.meshBasicMaterial attachArray="material" color="hotpink" /> */}
         </a.mesh>
     );
 };
