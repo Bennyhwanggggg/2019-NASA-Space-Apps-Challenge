@@ -3,11 +3,29 @@ import * as THREE from 'three';
 import { useSpring, a } from 'react-spring/three';
 import { useRender, extend, useThree } from 'react-three-fiber';
 
+import water from '../assets/Water1.jpg';
+
 
 const Planet = props => {
 
     const meshRef = useRef();
 
+    const textureLoader = new THREE.TextureLoader();
+    const tet = textureLoader.load(water, (texture) => {
+        texture.wrapS = THREE.RepeatWrapping;
+        texture.wrapT = THREE.RepeatWrapping;
+        var material = new THREE.MeshBasicMaterial( {
+			map: texture
+		});
+    });
+
+    // const tet = textureLoader.load(water, (texture) => {
+    //     const mat = new THREE.MeshLambertMaterial({
+    //         // transparent: true,
+    //         opacity: .5,
+    //         map: texture
+    //     });
+    // })
     // const [active, setActive] = useState(false);
     // const properties = useSpring({
     //     scale: active ? [1.5, 1.5, 1.5] : [1, 1, 1],
@@ -33,7 +51,10 @@ const Planet = props => {
                 attach="geometry"
                 args={[2, 25, 25]}
             />
-            <meshPhongMaterial attach="material" color="grey" />
+            <meshBasicMaterial attach="material">
+                {console.log(tet.material)}
+                <texture attach="map" image={THREE.TextureLoader().load(water)} />
+            </meshBasicMaterial>
         </a.mesh>
     );
 };
