@@ -5,6 +5,7 @@ import AnimatableObjects from './components/AnimatableObjects';
 import ImageUploadButton from './components/ImageUploadButton';
 import * as PIXI from 'pixi.js';
 import { Viewport } from 'pixi-viewport';
+import { calculateHabitability, isHabitable } from './core';
 import chicken1 from './assets/chicken1.jpeg';
 import chicken2 from './assets/chicken2.jpeg';
 import chicken3 from './assets/chicken3.png';
@@ -22,13 +23,15 @@ texturesArray.push(temp2);
 texturesArray.push(temp3);
 texturesArray.push(dogggy);
 
-function TwoDView() {
+const TwoDView = ( { water, temperature, oxygen }) => {
     // const viewPort = new Viewport({
     //     screenWidth: window.innerWidth,
     //     screenHeight: window.innerHeight,
     //     worldWidth: 1000,
     //     worldHeight: 1000// the interaction module is important for wheel to work properly when renderer.view is placed or scaled
     // });
+
+    const habitabilityScore = calculateHabitability(water, temperature, oxygen);
 
     const canvas = {
         width: 2560,

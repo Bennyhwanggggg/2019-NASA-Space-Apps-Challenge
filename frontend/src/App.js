@@ -17,8 +17,13 @@ function App() {
             <UserControls
                 {...planetState}
             />
-            { false && <TwoDView/> }
-            
+            { 
+                false && 
+                <TwoDView
+                    water={planetState.water}
+                    temperature={planetState.temperature}
+                    oxygen={planetState.oxygen}
+                /> }
         </div>
     );
 };
