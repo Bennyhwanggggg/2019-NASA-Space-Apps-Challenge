@@ -1,5 +1,6 @@
 import React from 'react';
 import ThreeDView from './ThreeDView';
+import TwoDView from './TwoDView';
 import usePlanetState from './hooks/usePlanetState';
 import UserControls from './components/UserControls';
 
@@ -16,8 +17,8 @@ function App() {
             <UserControls
                 {...planetState}
             />
+            { false && <TwoDView/> }
         </div>
-        
     );
 };
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import { STATE_BOUNDS } from '../hooks/usePlanetState';
 
 const UserControls = (props) => {
     const {
@@ -23,6 +24,16 @@ const UserControls = (props) => {
         if (!value || !parseInt(value)) {
             setter(0);
             return;
+        }
+
+        const [min, max] = STATE_BOUNDS[name];
+
+        if (value < min) {
+            return setter(min);
+        }
+
+        if (value > max) {
+            return setter(max);
         }
 
         setter(parseInt(value));

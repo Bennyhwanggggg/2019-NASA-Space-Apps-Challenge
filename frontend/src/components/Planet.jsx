@@ -1,29 +1,35 @@
 import React, { useRef, useState, useEffect } from 'react';
 import * as THREE from 'three';
 import { a } from 'react-spring/three';
-import waterSrc from '../assets/water.jpg';
-import earthSrc from '../assets/earth.png';
-import iceSrc from '../assets/ice.jpg';
+import waterSrc from '../assets/water.png';
+import iceSrc from '../assets/ice.png';
+import fireSrc from '../assets/fire.png';
+import rockSrc from '../assets/rock.png';
 
-const getTexture = (water, temperature, oxygen) => {
-    const sum = temperature + water + oxygen;
+const getTexture = (temperature) => {
     const textureLoader = new THREE.TextureLoader();
-    if (sum > 6) {
+
+    if (temperature < 1) {
+        return textureLoader.load(iceSrc);
+    }
+
+    if (temperature < 2) {
         return textureLoader.load(waterSrc);
     }
-    if (sum === 6) {
-        return textureLoader.load(earthSrc);
+
+    if (temperature < 3) {
+        return textureLoader.load(rockSrc);
     }
 
-    return textureLoader.load(iceSrc);
+    return textureLoader.load(fireSrc);
 }
 
 const Planet = ({ planetCenter, water, temperature, oxygen }) => {
     const [texture, setTexture] = useState(getTexture(2, 2, 2));
 
     useEffect(() => {
-        setTexture(getTexture(water, temperature, oxygen));
-    }, [water, temperature, oxygen]);
+        setTexture(getTexture(temperature));
+    }, [temperature]);
 
     return (
         <a.mesh
