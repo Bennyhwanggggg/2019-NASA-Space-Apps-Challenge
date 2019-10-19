@@ -1,7 +1,7 @@
 import React from 'react';
 import { Stage, } from '@inlet/react-pixi';
 import Background from './components/Background';
-import { calculateHabitability, isHabitable } from './core';
+import { getAnimalHabitation, calculateHabitability } from './core';
 import Chicken from './components/Chicken';
 import Bird from './components/Bird';
 import Cow from './components/Cow';
@@ -17,6 +17,7 @@ const iceSky = 0x81cbe4;
 const TwoDView = ( { water, temperature, oxygen, setShow2DView }) => {
 
     var habitabilityScore = calculateHabitability(water, temperature, oxygen);
+    var { chicken, cow, bird } = getAnimalHabitation(water, temperature, oxygen);
 
     let skyColor;
 
@@ -74,9 +75,15 @@ const TwoDView = ( { water, temperature, oxygen, setShow2DView }) => {
                     height={canvas.height}
                 />
                 <Tree/>
-                <Chicken/>
-                <Cow/>
-                <Bird/>
+                <Chicken
+                    amount={chicken}
+                />
+                <Cow
+                    amount={cow}
+                />
+                <Bird
+                    amount={bird}
+                />
             </Stage>
         </div>
     );

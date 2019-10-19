@@ -5,8 +5,7 @@ import { chickenConfig } from '../animalPositionConfig';
 import { chickenTextures } from '../Texture2DLoader';
 
 
-const Chicken = ( { water, temperature, oxygen } ) => {
-    var habitabilityScore = calculateHabitability(water, temperature, oxygen);
+const Chicken = ( { amount } ) => {
 
     const flip = Math.random() >= 0.5;
     const chickenTexturesCollection = [chickenTextures];
@@ -14,7 +13,8 @@ const Chicken = ( { water, temperature, oxygen } ) => {
     var rescaleValue = Math.random()/2;
     rescaleValue = rescaleValue > 0.2 ? rescaleValue : 0.2;
 
-    const chickenComponents = chickenConfig.map(({ position: {x, y} }) => 
+    chickenConfig.sort((a, b) => a.position.y - b.position.y);
+    const chickenComponents = chickenConfig.slice(0, amount).map(({ position: {x, y} }) => 
         <AnimatableObjects 
             key={`${x}__${y}`}
             x={x}

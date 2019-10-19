@@ -17,6 +17,7 @@ const Tree = ( { water, temperature, oxygen } ) => {
 
     const textures = [threeTreeTexture];
 
+    treeConfig.sort((a, b) => a.position.y - b.position.y);
     const treeComponents = treeConfig.map(({ position: {x, y} }) => 
         <AnimatableObjects 
             key={`${x}__${y}_tree`}

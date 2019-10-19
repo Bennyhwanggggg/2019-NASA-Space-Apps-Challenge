@@ -7,13 +7,12 @@ import { birdBTextures } from '../Texture2DLoader';
 import { birdCTextures } from '../Texture2DLoader';
 
 
-const Bird = ( { water, temperature, oxygen } ) => {
-    var habitabilityScore = calculateHabitability(water, temperature, oxygen);
-
+const Bird = ( { amount } ) => {
     const flip = Math.random() >= 0.5;
     const birdTexturesCollection = [birdATextures, birdBTextures, birdCTextures];
 
-    const birdComponents = birdConfig.map(({ position: {x, y} }) => 
+    birdConfig.sort((a, b) => a.position.y - b.position.y);
+    const birdComponents = birdConfig.slice(0, amount).map(({ position: {x, y} }) => 
         <AnimatableObjects 
             key={`${x}__${y}`}
             x={x}
@@ -24,7 +23,6 @@ const Bird = ( { water, temperature, oxygen } ) => {
             animationSpeed={0.1}
         />
     )
-
     return birdComponents;
 }
 

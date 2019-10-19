@@ -1,7 +1,7 @@
 import React from 'react';
 import * as PIXI from 'pixi.js';
 import AnimatableObjects from './AnimatableObjects';
-import { calculateHabitability, isHabitable } from '../core';
+import { calculateHabitability } from '../core';
 import { mountainConfig } from '../landScapePositionConfig';
 import iceMountain from '../assets/2DLandScapes/iceberg.png';
 import normalMountain from '../assets/2DLandScapes/normal.png';
@@ -14,11 +14,24 @@ const fireMountainTexture = PIXI.Texture.from(fireMountain);
 const normalMountainTexture = PIXI.Texture.from(normalMountain);
 
 
-const Mountain = ( { water, temperature, oxygen } ) => {
-    var habitabilityScore = calculateHabitability(water, temperature, oxygen);
+const Mountain = ( { temperature } ) => {
+    let mountainTexture;
+    switch (temperature) {
+        case temperature <= 1:
+            mountainTexture = iceMountainTexture;
+            break;
+        case temperature <= 2:
+            mountainTexture = rockMountainTexture;
+            break;
+        case temperature < 3:
+            mountainTexture = normalMountainTexture;
+        default:
+            mountainTexture = fireMountainTexture;
+    }
 
-    const textures = [rockMountainTexture];
+    const textures = [mountainTexture];
 
+    mountainConfig.sort((a, b) => a.position.y - b.position.y);
     const mountainComponents = mountainConfig.map(({ position: {x, y} }) => 
         <AnimatableObjects 
             key={`${x}__${y}_mountain`}

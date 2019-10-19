@@ -5,13 +5,13 @@ import { cowConfig } from '../animalPositionConfig';
 import { cowTextures } from '../Texture2DLoader';
 
 
-const Cow = ( { water, temperature, oxygen } ) => {
-    var habitabilityScore = calculateHabitability(water, temperature, oxygen);
+const Cow = ( { amount } ) => {
 
     const flip = Math.random() >= 0.5;
     const cowTexturesCollections = [cowTextures];
 
-    const cowComponents = cowConfig.map(({ position: {x, y} }) => 
+    cowConfig.sort((a, b) => a.position.y - b.position.y);
+    const cowComponents = cowConfig.slice(0, amount).map(({ position: {x, y} }) => 
         <AnimatableObjects 
             key={`${x}__${y}`}
             x={x}
