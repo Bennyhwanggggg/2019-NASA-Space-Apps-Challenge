@@ -8,9 +8,9 @@ export const calculateHabitability = (water, temperature, oxygen) => {
 export const getAnimalHabitation = (water, temperature, oxygen) => {
     const habitability = calculateHabitability(water, temperature, oxygen)
 
-    const chicken = 8/ 15 * 15 * habitability / 3;
-    const cow = 4 / 15 * 15 * habitability / 3;
-    const bird = 3 / 15 * 15 * habitability / 3;
+    const chicken = Math.round(8/ 15 * 15 * habitability / 3);
+    const cow = Math.round(4 / 15 * 15 * habitability / 3);
+    const bird = Math.round(3 / 15 * 15 * habitability / 3);
 
     return {
         chicken,
