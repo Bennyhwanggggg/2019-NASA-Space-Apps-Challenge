@@ -3,11 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "react": "^16.10.2",
-    "react-dom": "^16.10.2",
-    "react-scripts": "3.2.0",
-    "react-spring": "^8.0.27",
-    "react-three-fiber": "^3.0.2",
     "@inlet/react-pixi": "^1.1.2",
     "@types/jest": "^24.0.18",
     "@types/node": "^12.7.11",
@@ -16,7 +11,13 @@
     "@typescript-eslint/parser": "^2.3.2",
     "fs": "0.0.1-security",
     "pixi": "^0.3.1",
+    "pixi-viewport": "^4.3.1",
     "pixi.js": "^5.1.5",
+    "react": "^16.10.2",
+    "react-dom": "^16.10.2",
+    "react-scripts": "3.2.0",
+    "react-spring": "^8.0.27",
+    "react-three-fiber": "^3.0.2",
     "request": "^2.88.0"
   },
   "scripts": {
