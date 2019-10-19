@@ -2,13 +2,13 @@ export const chickenConfig = [
     {
         position : {
             x: 100,
-            y: 150
+            y: -300
         }
     },
     {
         position : {
-            x: 130,
-            y: 150
+            x: 530,
+            y: 500
         }
     },
     {
@@ -85,13 +85,13 @@ export const birdConfig = [
     },
     {
         position : {
-            x: 580,
+            x: 880,
             y: 350
         }
     },
     {
         position : {
-            x: 610,
+            x: 2010,
             y: 350
         }
     }

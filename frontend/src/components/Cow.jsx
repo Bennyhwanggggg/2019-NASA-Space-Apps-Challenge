@@ -1,21 +1,22 @@
 import React from 'react';
-import AnimatableObjects from './components/AnimatableObjects';
-import { calculateHabitability, isHabitable } from './core';
+import AnimatableObjects from './AnimatableObjects';
+import { calculateHabitability, isHabitable } from '../core';
 import { cowConfig } from '../animalPositionConfig';
-import { cowTexture } from '../Texture2DLoader';
+import { cowTextures } from '../Texture2DLoader';
 
 
 const Cow = ( { water, temperature, oxygen } ) => {
     var habitabilityScore = calculateHabitability(water, temperature, oxygen);
 
-    const cowTextures = [cowTexture];
+    const cowTexturesCollections = [cowTextures];
 
     const cowComponents = cowConfig.map((x, y) => 
         <AnimatableObjects 
+            key={`${x}__${y}`}
             x={x}
             y={y}
-            textures = {cowTextures[Math.floor(Math.random() * cowTextures.length) + 1]}
-            animationSpeed = {0.9}
+            textures = {cowTexturesCollections[Math.floor(Math.random() * cowTexturesCollections.length)]}
+            animationSpeed={1.9}
         />
     )
 

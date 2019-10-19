@@ -3,13 +3,13 @@ import { Container, AnimatedSprite } from '@inlet/react-pixi';
 
 const AnimatableObjects = props => {
 
-    const textures = props.textures != null ? props.textures : [];
+    const textures = props.textures !== null ? props.textures : [];
     textures.sort();
 
-    const x = props.x != null ? props.x : 0;
-    const y = props.y != null ? props.y : 0;
+    const x = props.x !== null ? props.x : 0;
+    const y = props.y !== null ? props.y : 0;
 
-    const animateionSpeed = props.animationSpeed != null ? props.animateionSpeed : 0.2;
+    const animateionSpeed = props.animationSpeed !== null ? props.animationSpeed : 0.2;
 
     return (
         <Container 

@@ -6,10 +6,10 @@ import birdC from './assets/2DAnimals/birdC.png';
 import chicken from './assets/2DAnimals/chicken.png';
 import cow from './assets/2DAnimals/cow.png';
 
-export const birdATexture = PIXI.Texture.from(birdA);
-export const birdBTexture = PIXI.Texture.from(birdB);
-export const birdCTexture = PIXI.Texture.from(birdC);
+export const birdATextures = [PIXI.Texture.from(birdA), PIXI.Texture.from(birdA)];
+export const birdBTextures = [PIXI.Texture.from(birdB), PIXI.Texture.from(birdB)];
+export const birdCTextures = [PIXI.Texture.from(birdC), PIXI.Texture.from(birdC)];
 
-export const chickenTexture = PIXI.Texture.from(chicken);
+export const chickenTextures = [PIXI.Texture.from(chicken), PIXI.Texture.from(chicken)];
 
-export const cowTexture = PIXI.Texture.from(cow);
+export const cowTextures = [PIXI.Texture.from(cow), PIXI.Texture.from(cow)];

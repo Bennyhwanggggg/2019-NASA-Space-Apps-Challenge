@@ -1,21 +1,22 @@
 import React from 'react';
-import AnimatableObjects from './components/AnimatableObjects';
-import { calculateHabitability, isHabitable } from './core';
+import AnimatableObjects from './AnimatableObjects';
+import { calculateHabitability, isHabitable } from '../core';
 import { chickenConfig } from '../animalPositionConfig';
-import { chickenTexture } from '../Texture2DLoader';
+import { chickenTextures } from '../Texture2DLoader';
 
 
 const Chicken = ( { water, temperature, oxygen } ) => {
     var habitabilityScore = calculateHabitability(water, temperature, oxygen);
 
-    const chickenTextures = [chickenTexture];
+    const chickenTexturesCollection = [chickenTextures];
 
     const chickenComponents = chickenConfig.map((x, y) => 
         <AnimatableObjects 
+            key={`${x}__${y}`}
             x={x}
             y={y}
-            textures = {chickenTextures[Math.floor(Math.random() * chickenTextures.length) + 1]}
-            animationSpeed = {0.9}
+            textures = {chickenTexturesCollection[Math.floor(Math.random() * chickenTexturesCollection.length)]}
+            animationSpeed={1.3}
         />
     )
 

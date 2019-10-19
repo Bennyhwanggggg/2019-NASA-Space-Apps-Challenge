@@ -1,23 +1,24 @@
 import React from 'react';
-import AnimatableObjects from './components/AnimatableObjects';
-import { calculateHabitability, isHabitable } from './core';
+import AnimatableObjects from './AnimatableObjects';
+import { calculateHabitability, isHabitable } from '../core';
 import { birdConfig } from '../animalPositionConfig';
-import { birdATexture } from '../Texture2DLoader';
-import { birdBTexture } from '../Texture2DLoader';
-import { birdCTexture } from '../Texture2DLoader';
+import { birdATextures } from '../Texture2DLoader';
+import { birdBTextures } from '../Texture2DLoader';
+import { birdCTextures } from '../Texture2DLoader';
 
 
 const Bird = ( { water, temperature, oxygen } ) => {
     var habitabilityScore = calculateHabitability(water, temperature, oxygen);
 
-    const birdTextures = [birdATexture, birdBTexture, birdCTexture];
+    const birdTexturesCollection = [birdATextures, birdBTextures, birdCTextures];
 
-    const birdComponents = birdConfig.map((x, y) => 
+    const birdComponents = birdConfig.map(({ position: {x, y} }) => 
         <AnimatableObjects 
+            key={`${x}__${y}`}
             x={x}
             y={y}
-            textures = {birdTextures[Math.floor(Math.random() * birdTextures.length) + 1]}
-            animationSpeed = {0.7}
+            textures={birdTexturesCollection[Math.floor(Math.random() * birdTexturesCollection.length)]}
+            animationSpeed={1.2}
         />
     )
 

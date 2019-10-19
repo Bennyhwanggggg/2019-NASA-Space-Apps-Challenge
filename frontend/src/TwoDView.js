@@ -1,15 +1,12 @@
 import React from 'react';
 import { Stage, } from '@inlet/react-pixi';
 import Background from './components/Background';
-import AnimatableObjects from './components/AnimatableObjects';
 import ImageUploadButton from './components/ImageUploadButton';
 import * as PIXI from 'pixi.js';
 import { calculateHabitability, isHabitable } from './core';
-import birdATexture from './Texture2DLoader';
-import birdBTexture from './Texture2DLoader';
-import birdCTexture from './Texture2DLoader';
-import chickenTexture from './Texture2DLoader';
-import cowTexture from './Texture2DLoader';
+import Chicken from './components/Chicken';
+import Bird from './components/Bird';
+import Cow from './components/Cow';
 
 const redSky = 0xe33719;
 const greySky = 0x6b6361;
@@ -68,11 +65,9 @@ const TwoDView = ( { water, temperature, oxygen }) => {
                     width={canvas.width}
                     height={canvas.height}
                 />
-                {/* <AnimatableObjects
-                    textures={texturesArray}
-                    x={320}
-                    y={680}
-                /> */}
+                <Chicken/>
+                <Cow/>
+                <Bird/>
             </Stage>
             <ImageUploadButton/>
         </div>
