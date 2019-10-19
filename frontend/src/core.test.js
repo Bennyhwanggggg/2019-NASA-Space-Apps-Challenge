@@ -1,15 +1,13 @@
-import { calculateHabitability, isHabitable, manipulatePlanet } from './core';
+import { calculateHabitability, getAnimalHabitation, manipulatePlanet } from './core';
 
 test('1 water, 2 temperature, 1 oxygen = 1.2 habitability', () => {
     expect(calculateHabitability(1, 2, 1)).toBe(1.2);
 });
 
-test('1.5 habitability is habitable', () => {
-    expect(isHabitable(1.5)).toBe(true);
-});
+test('most habitable planet can only have maximun 15 animals', () => {
+    const habitation = getAnimalHabitation(4, 3, 3);
 
-test('1.4 habitability is not habitable', () => {
-    expect(isHabitable(1.4)).toBe(false);
+    expect(habitation.chicken + habitation.cow + habitation.bird).toBe(15);
 });
 
 test('Eating more sashimi will decrase the water in a planet', () => {
