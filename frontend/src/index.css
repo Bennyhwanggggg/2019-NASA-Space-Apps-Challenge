@@ -14,6 +14,17 @@ canvas {
   background: 	#110f1c;
 }
 
+.userControls {
+  background: rgba(255,255,255, 0.9);
+  position: fixed;
+  top: 0;
+  left:0;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;

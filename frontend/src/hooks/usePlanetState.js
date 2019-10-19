@@ -1,5 +1,11 @@
 import { useState, useEffect } from 'react';
 
+export const STATE_BOUNDS = {
+    water: [0, 4],
+    temperature: [0, 3],
+    oxygen: [0, 3],
+};
+
 const usePlanetState = () => {
     const [water, setWater] = useState(2);
     const [temperature, setTemperature] = useState(2);
