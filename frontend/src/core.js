@@ -1,3 +1,5 @@
+import { getIndex } from './image_classes'
+
 export const calculateHabitability = (water, temperature, oxygen) => {
     if (water < 0){
         water = 0
@@ -39,11 +41,26 @@ export const manipulatePlanet = (predictResult) => {
 
     const { className } = predictResult
 
-    switch (className) {
-        case "Sashimi":
-            water = -0.2
-        case "Spaghetti carbonara":
-            temperature = 2;
+    const index = getIndex(className)
+
+    const category = Math.round(index/20)
+
+    switch (category) {
+        case 0:
+            water = -1
+            oxygen = 1
+            temperature = 1
+        case 1:
+            oxygen = -1
+            temperature = -2
+        case 2:
+            temperature = -1
+        case 3:
+            oxygen = 1
+            temperature = -1
+        case 4:
+            water = -1
+            temperature = 3
         default:
             break;
     }
@@ -53,4 +70,4 @@ export const manipulatePlanet = (predictResult) => {
         temperature,
         oxygen
     }
-}
+};

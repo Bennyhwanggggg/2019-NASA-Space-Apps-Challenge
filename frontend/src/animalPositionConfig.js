@@ -1,50 +1,50 @@
 export const chickenConfig = [
     {
         position : {
-            x: 100,
-            y: -300
+            x: 1000,
+            y: 1120
         }
     },
     {
         position : {
-            x: 530,
-            y: 500
+            x: 1300,
+            y: 1250
         }
     },
     {
         position : {
-            x: 150,
-            y: 150
+            x: 1070,
+            y: 1200
         }
     },
     {
         position : {
-            x: 170,
-            y: 150
+            x: 770,
+            y: 1230
         }
     },
     {
         position : {
-            x: 190,
-            y: 150
+            x: 930,
+            y: 1320
         }
     },
     {
         position : {
-            x: 210,
-            y: 150
+            x: 1220,
+            y: 1300
         }
     },
     {
         position : {
-            x: 230,
-            y: 150
+            x: 1200,
+            y: 1170
         }
     },
     {
         position : {
-            x: 250,
-            y: 150
+            x: 820,
+            y: 1270
         }
     },
 ]
@@ -52,26 +52,26 @@ export const chickenConfig = [
 export const cowConfig = [
     {
         position : {
-            x: 550,
-            y: 150
+            x: 2250,
+            y: 1110
         }
     },
     {
         position : {
-            x: 580,
-            y: 150
+            x: 2080,
+            y: 950
         }
     },
     {
         position : {
-            x: 610,
-            y: 150
+            x: 1910,
+            y: 1050
         }
     },
     {
         position : {
-            x: 640,
-            y: 150
+            x: 2340,
+            y: 1050
         }
     }
 ]
@@ -80,18 +80,18 @@ export const birdConfig = [
     {
         position : {
             x: 550,
-            y: 350
+            y: 220
         }
     },
     {
         position : {
-            x: 880,
-            y: 350
+            x: 1280,
+            y: 130
         }
     },
     {
         position : {
-            x: 2010,
+            x: 2110,
             y: 350
         }
     }
