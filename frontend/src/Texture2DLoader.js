@@ -1,12 +1,15 @@
-import chicken1 from './assets/chicken1.jpeg';
-import chicken2 from './assets/chicken2.jpeg';
-import chicken3 from './assets/chicken3.png';
-import dog from './assets/dog.jpg';
-
 import * as PIXI from 'pixi.js';
 
-const chicken1 = PIXI.Texture.from(chicken1);
-const chicken2 = PIXI.Texture.from(chicken2);
-const chicken3 = PIXI.Texture.from(chicken3);
+import birdA from './assets/2DAnimals/birdA.png';
+import birdB from './assets/2DAnimals/birdB.png';
+import birdC from './assets/2DAnimals/birdC.png';
+import chicken from './assets/2DAnimals/chicken.png';
+import cow from './assets/2DAnimals/cow.png';
 
-const dogggy = PIXI.Texture.from(dog);
+export const birdATexture = PIXI.Texture.from(birdA);
+export const birdBTexture = PIXI.Texture.from(birdB);
+export const birdCTexture = PIXI.Texture.from(birdC);
+
+export const chickenTexture = PIXI.Texture.from(chicken);
+
+export const cowTexture = PIXI.Texture.from(cow);

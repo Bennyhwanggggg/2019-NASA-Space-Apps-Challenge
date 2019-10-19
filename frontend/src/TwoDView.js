@@ -6,22 +6,12 @@ import ImageUploadButton from './components/ImageUploadButton';
 import * as PIXI from 'pixi.js';
 import { Viewport } from 'pixi-viewport';
 import { calculateHabitability, isHabitable } from './core';
-import chicken1 from './assets/chicken1.jpeg';
-import chicken2 from './assets/chicken2.jpeg';
-import chicken3 from './assets/chicken3.png';
-import dog from './assets/dog.jpg';
+import birdATexture from './Texture2DLoader';
+import birdBTexture from './Texture2DLoader';
+import birdCTexture from './Texture2DLoader';
+import chickenTexture from './Texture2DLoader';
+import cowTexture from './Texture2DLoader';
 
-
-const temp = PIXI.Texture.from(chicken1);
-const temp2 = PIXI.Texture.from(chicken2);
-const temp3 = PIXI.Texture.from(chicken3);
-const dogggy = PIXI.Texture.from(dog);
-
-const texturesArray = [];
-texturesArray.push(temp);
-texturesArray.push(temp2);
-texturesArray.push(temp3);
-texturesArray.push(dogggy);
 
 const TwoDView = ( { water, temperature, oxygen }) => {
     // const viewPort = new Viewport({
