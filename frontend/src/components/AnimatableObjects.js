@@ -14,9 +14,9 @@ const AnimatableObjects = props => {
     const y = props.y != null ? props.y : 0;
 
     return (
-            <Container 
-                position={[x, y]} // use this to set position of image on canvas
-            >
+        <Container 
+            position={[x, y]} // use this to set position of image on canvas
+        >
             <AnimatedSprite 
                 textures={textures}
                 anchor={0.5} // anchor is the orgin point of the image, defaults to topleft of an image. 0.5 is the centre
