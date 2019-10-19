@@ -5,6 +5,7 @@ import { calculateHabitability, isHabitable } from './core';
 import Chicken from './components/Chicken';
 import Bird from './components/Bird';
 import Cow from './components/Cow';
+import Tree from './components/Tree';
 import Mountain from './components/Mountains';
 
 const redSky = 0x524444;
@@ -64,6 +65,7 @@ const TwoDView = ( { water, temperature, oxygen }) => {
                     width={canvas.width}
                     height={canvas.height}
                 />
+                <Tree/>
                 <Chicken/>
                 <Cow/>
                 <Bird/>

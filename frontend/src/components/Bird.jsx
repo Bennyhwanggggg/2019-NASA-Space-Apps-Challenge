@@ -19,6 +19,7 @@ const Bird = ( { water, temperature, oxygen } ) => {
             x={x}
             y={y}
             flipHorizontal={flip}
+            randomResize={true}
             textures={birdTexturesCollection[Math.floor(Math.random() * birdTexturesCollection.length)]}
             animationSpeed={0.1}
         />
