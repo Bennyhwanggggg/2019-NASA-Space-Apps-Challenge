@@ -1,4 +1,4 @@
-import {manipulatePlanet} from "./core"
+import { manipulatePlanet } from "./core"
 
 test('Eating more sashimi will decrase the water in a planet', () => {
     const predictResult = {

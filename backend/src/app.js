@@ -7,6 +7,7 @@ import bodyParser from 'body-parser';
 import fileUpload from 'express-fileupload';
 import * as tf from '@tensorflow/tfjs-node';
 import { IMAGENET_CLASSES } from './AI/imagenet_classes';
+import { manipulatePlanet } from "./core"
 
 const app = express();
 
@@ -33,7 +34,7 @@ app.post('/predict', async (req, res, next) => {
         let predictionResult = await startPrediction(req.files.image.data);
         console.log('prediction reuslt', predictionResult);
         res.json({
-            result: predictionResult
+            result: manipulatePlanet(predictionResult)
         });
     }
 })
