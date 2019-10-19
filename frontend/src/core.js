@@ -5,8 +5,18 @@ export const calculateHabitability = (water, temperature, oxygen) => {
     return 3 * water / 10 + 3 * temperature / 10 + 3 * oxygen / 10
 }
 
-export const isHabitable = (habitability) => {
-    return habitability >= 1.5
+export const getAnimalHabitation = (water, temperature, oxygen) => {
+    const habitability = calculateHabitability(water, temperature, oxygen)
+
+    const chicken = 8/ 15 * 15 * habitability / 3;
+    const cow = 4 / 15 * 15 * habitability / 3;
+    const bird = 3 / 15 * 15 * habitability / 3;
+
+    return {
+        chicken,
+        cow,
+        bird
+    }
 }
 
 export const manipulatePlanet = (predictResult) => {
@@ -15,7 +25,6 @@ export const manipulatePlanet = (predictResult) => {
     var oxygen = 0;
 
     const { className } = predictResult
-    console.log(className);
 
     switch (className) {
         case "Sashimi":
