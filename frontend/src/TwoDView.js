@@ -1,8 +1,6 @@
 import React from 'react';
 import { Stage, } from '@inlet/react-pixi';
 import Background from './components/Background';
-import ImageUploadButton from './components/ImageUploadButton';
-import * as PIXI from 'pixi.js';
 import { calculateHabitability, isHabitable } from './core';
 import Chicken from './components/Chicken';
 import Bird from './components/Bird';
@@ -69,7 +67,6 @@ const TwoDView = ( { water, temperature, oxygen }) => {
                 <Cow/>
                 <Bird/>
             </Stage>
-            <ImageUploadButton/>
         </div>
     );
 }
