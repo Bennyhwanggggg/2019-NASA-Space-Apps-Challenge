@@ -7,11 +7,11 @@ import Bird from './components/Bird';
 import Cow from './components/Cow';
 import Mountain from './components/Mountains';
 
-const redSky = 0xe33719;
-const greySky = 0x6b6361;
-const normalSky = 0x00aaff;
-const waterSky = 0x4d98d1;
-const iceSky = 0xb8e7ff;
+const redSky = 0x524444;
+const greySky = 0xfeffeb;
+const normalSky = 0x9be3fb;
+const waterSky = 0xe4eef9;
+const iceSky = 0x81cbe4;
 
 const TwoDView = ( { water, temperature, oxygen }) => {
 
