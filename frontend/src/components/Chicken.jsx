@@ -10,7 +10,7 @@ const Chicken = ( { water, temperature, oxygen } ) => {
 
     const chickenTexturesCollection = [chickenTextures];
 
-    const chickenComponents = chickenConfig.map((x, y) => 
+    const chickenComponents = chickenConfig.map(({ position: {x, y} }) => 
         <AnimatableObjects 
             key={`${x}__${y}`}
             x={x}

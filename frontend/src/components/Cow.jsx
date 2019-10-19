@@ -10,7 +10,7 @@ const Cow = ( { water, temperature, oxygen } ) => {
 
     const cowTexturesCollections = [cowTextures];
 
-    const cowComponents = cowConfig.map((x, y) => 
+    const cowComponents = cowConfig.map(({ position: {x, y} }) => 
         <AnimatableObjects 
             key={`${x}__${y}`}
             x={x}
