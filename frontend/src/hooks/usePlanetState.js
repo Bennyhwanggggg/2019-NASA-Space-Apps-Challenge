@@ -2,14 +2,14 @@ import { useState, useEffect } from 'react';
 
 export const STATE_BOUNDS = {
     water: [0, 4],
-    temperature: [0, 3],
+    temperature: [0, 4],
     oxygen: [0, 3],
 };
 
 const usePlanetState = () => {
     const [water, setWater] = useState(2);
-    const [temperature, setTemperature] = useState(2);
-    const [oxygen, setOxgen] = useState(2);
+    const [temperature, setTemperature] = useState();
+    const [oxygen, setOxygen] = useState(2);
 
     const [habitability, sethabitability] = useState(6);
 
@@ -26,7 +26,7 @@ const usePlanetState = () => {
         oxygen,
         setWater,
         setTemperature,
-        setOxgen,
+        setOxygen,
         habitability,
     };
 };
