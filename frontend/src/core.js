@@ -1,4 +1,4 @@
-import { getIndex } from './image_classes'
+import { Junks, LifeStocks, Plantations } from './foodClasses';
 
 export const calculateHabitability = (water, temperature, oxygen) => {
     if (water < 0){
@@ -36,33 +36,27 @@ export const getAnimalHabitation = (water, temperature, oxygen) => {
 
 export const manipulatePlanet = (predictResult) => {
     var water = 0;
-    var temperature= 0 ;
+    var temperature = 0 ;
     var oxygen = 0;
 
     const { className } = predictResult
 
-    const index = getIndex(className)
-
-    const category = Math.round(index/20)
-
-    switch (category) {
-        case 0:
-            water = -1
-            oxygen = 1
-            temperature = 1
-        case 1:
-            oxygen = -1
-            temperature = -2
-        case 2:
-            temperature = -1
-        case 3:
-            oxygen = 1
-            temperature = -1
-        case 4:
-            water = -1
-            temperature = 3
-        default:
-            break;
+    if (Junks.includes(className)) {
+        water -= 0.6;
+        oxygen -= 0.4;
+        temperature += 0.9;
+    } else if (LifeStocks.includes(className)) {
+        water -= 0.9;
+        oxygen += 0.7;
+        temperature -= 0.3
+    } else if (Plantations.includes(className)) {
+        water += 0.4;
+        oxygen += 0.7;
+        temperature -= 0.6;
+    } else {
+        water += 0.5;
+        oxygen -= 0.5;
+        temperature += 0.5;
     }
 
     return {
