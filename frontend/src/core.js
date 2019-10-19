@@ -20,6 +20,8 @@ export const manipulatePlanet = (predictResult) => {
     switch (className) {
         case "Sashimi":
             water = -0.2
+        case "Spaghetti carbonara":
+            temperature = 2;
         default:
             break;
     }

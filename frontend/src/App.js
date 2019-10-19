@@ -18,6 +18,7 @@ function App() {
                 {...planetState}
             />
             { false && <TwoDView/> }
+            
         </div>
     );
 };
