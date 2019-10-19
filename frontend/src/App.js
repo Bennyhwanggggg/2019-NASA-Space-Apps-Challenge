@@ -25,6 +25,7 @@ function App() {
                     water={planetState.water}
                     temperature={planetState.temperature}
                     oxygen={planetState.oxygen}
+                    setShow2DView={setShow2DView}
                 />
             }
         </div>
