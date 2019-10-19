@@ -1,7 +1,19 @@
 export const calculateHabitability = (water, temperature, oxygen) => {
-    if (!(water >= 0 && water <= 4)) throw 'Water 0-4'
-    if (!(temperature >= 0 && temperature <= 3)) throw 'Temperature 0-3'
-    if (!(oxygen >= 0 && oxygen <= 3)) throw 'Oxygen 0-3'
+    if (water < 0){
+        water = 0
+    } else if (water > 4) {
+        water = 4
+    }
+    if (temperature < 0){
+        temperature = 0
+    } else if (temperature > 4) {
+        temperature = 4
+    }
+    if (oxygen < 0){
+        oxygen = 0
+    } else if (oxygen > 4) {
+        oxygen = 4
+    }
     return 3 * water / 10 + 3 * temperature / 10 + 3 * oxygen / 10
 }
 

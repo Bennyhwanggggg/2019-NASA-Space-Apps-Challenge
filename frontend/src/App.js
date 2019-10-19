@@ -9,16 +9,16 @@ function App() {
 
     return (
         <div className="main">
-            <ThreeDView
+            {/* <ThreeDView
                 water={planetState.water}
                 temperature={planetState.temperature}
                 oxygen={planetState.oxygen}
             />
             <UserControls
                 {...planetState}
-            />
+            /> */}
             { 
-                false && 
+                true && 
                 <TwoDView
                     water={planetState.water}
                     temperature={planetState.temperature}
