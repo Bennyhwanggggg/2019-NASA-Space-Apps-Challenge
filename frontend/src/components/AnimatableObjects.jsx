@@ -4,12 +4,13 @@ import { Container, AnimatedSprite } from '@inlet/react-pixi';
 const AnimatableObjects = props => {
 
     const textures = props.textures !== null ? props.textures : [];
-    textures.sort();
 
-    const x = props.x !== null ? props.x : 0;
-    const y = props.y !== null ? props.y : 0;
+    const x = props.x || 0;
+    const y = props.y || 0;
 
-    const animateionSpeed = props.animationSpeed !== null ? props.animationSpeed : 0.2;
+    const animateionSpeed = props.animationSpeed || 0.2;
+
+    const resize = props.randomResize ? (Math.random()+1)/2 : props.resize || 1;
 
     return (
         <Container 
@@ -21,6 +22,7 @@ const AnimatableObjects = props => {
                 isPlaying={true}
                 initialFrame={0}
                 animationSpeed={animateionSpeed}
+                scale= {resize}
                 interactive={true} // this must be set to true for events
                 click={() => {
                     console.log('sprite clicked.') // http://pixijs.download/dev/docs/PIXI.interaction.InteractionManager.html
