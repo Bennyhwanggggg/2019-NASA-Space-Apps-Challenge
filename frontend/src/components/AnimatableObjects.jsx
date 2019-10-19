@@ -8,6 +8,7 @@ const AnimatableObjects = props => {
         props.textures.forEach(texture => {
             textures.push(texture);
         });
+        textures.sort();
     }
 
     const x = props.x != null ? props.x : 0;

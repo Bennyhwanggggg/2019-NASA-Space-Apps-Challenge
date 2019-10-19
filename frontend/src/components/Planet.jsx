@@ -44,7 +44,7 @@ const Planet = ({ planetCenter, water, temperature, oxygen }) => {
                 attach="geometry"
                 args={[2, 25, 25]}
             />
-            <meshBasicMaterial
+            <meshLambertMaterial
                 attach="material"
                 map={texture}
             />
