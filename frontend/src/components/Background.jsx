@@ -7,7 +7,7 @@ const Background = props => {
     return (
         <Container>
             <Sprite
-                // image="https://s3-us-west-2.amazonaws.com/s.cdpn.io/693612/IaUrttj.png"
+                image="https://s3-us-west-2.amazonaws.com/s.cdpn.io/693612/IaUrttj.png"
                 // image={BackgroundImage}
                 // I think: http://pixijs.download/release/docs/PIXI.Sprite.html#anchor
                 x={0} // anchor x
