@@ -4,7 +4,6 @@ import Background from './components/Background';
 import AnimatableObjects from './components/AnimatableObjects';
 import ImageUploadButton from './components/ImageUploadButton';
 import * as PIXI from 'pixi.js';
-import { Viewport } from 'pixi-viewport';
 import { calculateHabitability, isHabitable } from './core';
 import birdATexture from './Texture2DLoader';
 import birdBTexture from './Texture2DLoader';
@@ -19,12 +18,6 @@ const waterSky = 0x4d98d1;
 const iceSky = 0xb8e7ff;
 
 const TwoDView = ( { water, temperature, oxygen }) => {
-    // const viewPort = new Viewport({
-    //     screenWidth: window.innerWidth,
-    //     screenHeight: window.innerHeight,
-    //     worldWidth: 1000,
-    //     worldHeight: 1000// the interaction module is important for wheel to work properly when renderer.view is placed or scaled
-    // });
 
     var habitabilityScore = calculateHabitability(water, temperature, oxygen);
 
