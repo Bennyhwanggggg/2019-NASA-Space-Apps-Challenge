@@ -3,10 +3,10 @@ import * as PIXI from 'pixi.js';
 import AnimatableObjects from './AnimatableObjects';
 import { calculateHabitability, isHabitable } from '../core';
 import { mountainConfig } from '../landScapePositionConfig';
-import iceMountain from '../assets/2DMountains/iceberg.png';
-import normalMountain from '../assets/2DMountains/normal.png';
-import rockMountain from '../assets/2DMountains/rock_mountain.png';
-import fireMountain from '../assets/2DMountains/valcano.png';
+import iceMountain from '../assets/2DLandScapes/iceberg.png';
+import normalMountain from '../assets/2DLandScapes/normal.png';
+import rockMountain from '../assets/2DLandScapes/rock_mountain.png';
+import fireMountain from '../assets/2DLandScapes/valcano.png';
 
 const iceMountainTexture = PIXI.Texture.from(iceMountain);
 const rockMountainTexture = PIXI.Texture.from(rockMountain);
