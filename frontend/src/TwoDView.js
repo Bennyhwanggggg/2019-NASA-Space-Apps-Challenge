@@ -35,7 +35,7 @@ const TwoDView = ( { water, temperature, oxygen }) => {
                 height={canvas.height} 
                 options={{
                     autoStart: true,
-                    backgroundColor: 0xeef1f5
+                    backgroundColor: "#d9d9d9"
                     }}
                 style={{
                         position: 'absolute', left: '50%', top: '50%',
@@ -43,15 +43,15 @@ const TwoDView = ( { water, temperature, oxygen }) => {
                     }}
                 // viewPort={viewPort}
             >
-                <Background
+                {/* <Background
                     width={canvas.width}
                     height={canvas.height}
-                />
-                <AnimatableObjects
+                /> */}
+                {/* <AnimatableObjects
                     textures={texturesArray}
                     x={320}
                     y={680}
-                />
+                /> */}
             </Stage>
             <ImageUploadButton/>
         </div>
