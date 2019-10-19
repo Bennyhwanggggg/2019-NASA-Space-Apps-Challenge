@@ -102,7 +102,7 @@ export const IMAGENET_CLASSES = {
     100: 'Waffles'
 };
 
-const getIndex = (classname) => {
+export const getIndex = (classname) => {
     for (let key in IMAGENET_CLASSES) {
         if (IMAGENET_CLASSES[key] === classname) {
             return parseInt(key);
