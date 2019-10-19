@@ -16,7 +16,7 @@ const AIButton = (props) => {
         oxygen,
         setWater,
         setTemperature,
-        setOxgen,
+        setOxygen,
     } = props;
 
     const uploadFile = async (file) => {
@@ -46,7 +46,7 @@ const AIButton = (props) => {
 
             setWater(water+waterChange);
             setTemperature(temperature+temperatureChange);
-            setOxgen(oxygen+oxygenChange);
+            setOxygen(oxygen+oxygenChange);
 
             // alert(`Wow, it's ${result.className}`)
 

@@ -1,6 +1,7 @@
 import React from 'react';
 import { STATE_BOUNDS } from '../hooks/usePlanetState';
 import AIButton from './AIButton';
+import debounce from 'lodash/debounce';
 
 const UserControls = (props) => {
     const {
@@ -9,13 +10,13 @@ const UserControls = (props) => {
         oxygen,
         setWater,
         setTemperature,
-        setOxgen,
+        setOxygen,
     } = props;
 
     const funcMapper = {
         water: setWater,
-        temperatrue: setTemperature,
-        oxygen: setOxgen,
+        temperature: setTemperature,
+        oxygen: setOxygen,
     };
 
     const handleChange = (e) => {
@@ -43,33 +44,42 @@ const UserControls = (props) => {
     return (
         <div className="userControls">
             <div>
-                <label for="water">water: </label>
+                <label htmlFor="water">water  </label>
                 <input
+                    type="range"
                     id="water"
-                    type="text"
+                    min="0"
+                    max="4"
+                    step="1"
                     name="water"
-                    onChange={handleChange}
                     value={water}
+                    onChange={handleChange}
                 />
             </div>
             <div>
-                <label for="temperatrue">temperatrue: </label>
+                <label for="temperature">temperatrue  </label>
                 <input
-                    id="temperatrue"
-                    type="text"
-                    name="temperatrue"
-                    onChange={handleChange}
+                    type="range"
+                    id="temperature"
+                    min="0"
+                    max="3"
+                    step="1"
+                    name="temperature"
                     value={temperature}
+                    onChange={handleChange}
                 />
             </div>
             <div>
                 <label for="oxygen">oxygen: </label>
                 <input
+                    type="range"
                     id="oxygen"
-                    type="text"
+                    min="0"
+                    max="3"
+                    step="1"
                     name="oxygen"
-                    onChange={handleChange}
                     value={oxygen}
+                    onChange={handleChange}
                 />
             </div>
             <AIButton
