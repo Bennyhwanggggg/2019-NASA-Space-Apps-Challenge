@@ -37,14 +37,14 @@ const Planet = ({ planetCenter, water, temperature, oxygen }) => {
             recieveShadow
         >
             <ambientLight 
-                intensity={0.3}
+                intensity={0.9}
                 color={0x404040}
             />
             <sphereBufferGeometry
                 attach="geometry"
                 args={[2, 25, 25]}
             />
-            <meshBasicMaterial
+            <meshLambertMaterial
                 attach="material"
                 map={texture}
             />

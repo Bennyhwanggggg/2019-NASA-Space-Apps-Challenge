@@ -12,6 +12,12 @@ const ThreeDView = ({ water, temperature, oxygen }) => {
 
     const planetCenter = new THREE.Vector3(0, -3, 0);
 
+    const secondLightPos = {
+        x: -100,
+        y: -100,
+        z: -100
+    }
+
     return (
         <Canvas 
             camera={camera}
@@ -21,6 +27,10 @@ const ThreeDView = ({ water, temperature, oxygen }) => {
             }}
         >
             <Light />
+            <Light 
+                position={secondLightPos}
+                intensity={0.1}
+            />
             <Controls
                 planetCenter={planetCenter}
             />
