@@ -1,5 +1,6 @@
 import React from 'react';
 import { STATE_BOUNDS } from '../hooks/usePlanetState';
+import AIButton from './AIButton';
 
 const UserControls = (props) => {
     const {
@@ -62,15 +63,18 @@ const UserControls = (props) => {
                 />
             </div>
             <div>
-                <label for="oxgen">oxygen: </label>
+                <label for="oxygen">oxygen: </label>
                 <input
-                    id="oxgen"
+                    id="oxygen"
                     type="text"
                     name="oxygen"
                     onChange={handleChange}
                     value={oxygen}
                 />
             </div>
+            <AIButton
+                {...props}
+            />
         </div>
     );
 };
