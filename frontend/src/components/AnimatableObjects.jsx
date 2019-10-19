@@ -11,6 +11,8 @@ const AnimatableObjects = props => {
     const animateionSpeed = props.animationSpeed || 0.2;
 
     const resize = props.randomResize ? (Math.random()+1)/2 : props.resize || 1;
+    const flipHorizontal = props.flipHorizontal || false;
+    const flip = flipHorizontal ? -1 : 1
 
     return (
         <Container 
@@ -22,7 +24,7 @@ const AnimatableObjects = props => {
                 isPlaying={true}
                 initialFrame={0}
                 animationSpeed={animateionSpeed}
-                scale= {resize}
+                scale= {{ x: resize*flip, y: resize}}
                 interactive={true} // this must be set to true for events
                 click={() => {
                     console.log('sprite clicked.') // http://pixijs.download/dev/docs/PIXI.interaction.InteractionManager.html

@@ -2,49 +2,49 @@ export const chickenConfig = [
     {
         position : {
             x: 1000,
-            y: 700
+            y: 1120
         }
     },
     {
         position : {
-            x: 1000,
-            y: 700
+            x: 1300,
+            y: 1250
         }
     },
     {
         position : {
-            x: 1000,
-            y: 700
+            x: 1070,
+            y: 1200
         }
     },
     {
         position : {
-            x: 1000,
-            y: 700
+            x: 770,
+            y: 1230
         }
     },
     {
         position : {
-            x: 1000,
-            y: 700
+            x: 930,
+            y: 1320
         }
     },
     {
         position : {
-            x: 1000,
-            y: 700
+            x: 1220,
+            y: 1300
         }
     },
     {
         position : {
-            x: 1000,
-            y: 300
+            x: 1200,
+            y: 1170
         }
     },
     {
         position : {
-            x: 1000,
-            y: 700
+            x: 820,
+            y: 1270
         }
     },
 ]
@@ -52,26 +52,26 @@ export const chickenConfig = [
 export const cowConfig = [
     {
         position : {
-            x: 550,
-            y: 150
+            x: 2250,
+            y: 1110
         }
     },
     {
         position : {
-            x: 580,
-            y: 150
+            x: 2080,
+            y: 950
         }
     },
     {
         position : {
-            x: 610,
-            y: 150
+            x: 1910,
+            y: 1050
         }
     },
     {
         position : {
-            x: 640,
-            y: 150
+            x: 2340,
+            y: 1050
         }
     }
 ]

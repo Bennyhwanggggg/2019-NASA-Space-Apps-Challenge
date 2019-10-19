@@ -8,13 +8,19 @@ import { chickenTextures } from '../Texture2DLoader';
 const Chicken = ( { water, temperature, oxygen } ) => {
     var habitabilityScore = calculateHabitability(water, temperature, oxygen);
 
+    const flip = Math.random() >= 0.5;
     const chickenTexturesCollection = [chickenTextures];
+
+    var rescaleValue = Math.random()/2;
+    rescaleValue = rescaleValue > 0.2 ? rescaleValue : 0.2;
 
     const chickenComponents = chickenConfig.map(({ position: {x, y} }) => 
         <AnimatableObjects 
             key={`${x}__${y}`}
             x={x}
             y={y}
+            resize={rescaleValue + (Math.random()/4)}
+            flipHorizontal={flip}
             textures = {chickenTexturesCollection[Math.floor(Math.random() * chickenTexturesCollection.length)]}
             animationSpeed={0.14}
         />
