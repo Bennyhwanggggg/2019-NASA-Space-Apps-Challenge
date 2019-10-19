@@ -16,7 +16,7 @@ const Cow = ( { water, temperature, oxygen } ) => {
             x={x}
             y={y}
             textures = {cowTexturesCollections[Math.floor(Math.random() * cowTexturesCollections.length)]}
-            animationSpeed={1.9}
+            animationSpeed={0.1}
         />
     )
 

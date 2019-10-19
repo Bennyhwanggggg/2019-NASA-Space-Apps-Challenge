@@ -16,7 +16,7 @@ const Chicken = ( { water, temperature, oxygen } ) => {
             x={x}
             y={y}
             textures = {chickenTexturesCollection[Math.floor(Math.random() * chickenTexturesCollection.length)]}
-            animationSpeed={1.3}
+            animationSpeed={0.14}
         />
     )
 
