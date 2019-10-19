@@ -14,7 +14,7 @@ const normalSky = 0x9be3fb;
 const waterSky = 0xe4eef9;
 const iceSky = 0x81cbe4;
 
-const TwoDView = ( { water, temperature, oxygen }) => {
+const TwoDView = ( { water, temperature, oxygen, setShow2DView }) => {
 
     var habitabilityScore = calculateHabitability(water, temperature, oxygen);
 
@@ -46,8 +46,16 @@ const TwoDView = ( { water, temperature, oxygen }) => {
         height: 1440
     }
 
+    const handleScroll = (event) => {
+        const delta = Math.sign(event.deltaY);
+        if (delta > 0) {
+            setShow2DView(false);
+        }
+        return;
+    }
+
     return (
-        <div>
+        <div onWheel={handleScroll}>
             <Stage 
                 width={canvas.width} 
                 height={canvas.height} 

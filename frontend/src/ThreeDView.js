@@ -5,7 +5,7 @@ import * as THREE from 'three';
 import { Light } from './components/Light';
 import { Controls } from './components/Controls';
 
-const ThreeDView = ({ water, temperature, oxygen }) => {
+const ThreeDView = ({ water, temperature, oxygen, setShow2DView, show2DView }) => {
     const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
     camera.position.set(5, 5, 5);
     camera.lookAt(new THREE.Vector3(0, 0, 0));
@@ -33,6 +33,8 @@ const ThreeDView = ({ water, temperature, oxygen }) => {
             />
             <Controls
                 planetCenter={planetCenter}
+                setShow2DView={setShow2DView}
+                show2DView={show2DView}
             />
             <Planet
                 planetCenter={planetCenter}

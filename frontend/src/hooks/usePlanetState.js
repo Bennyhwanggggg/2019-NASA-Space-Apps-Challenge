@@ -8,7 +8,7 @@ export const STATE_BOUNDS = {
 
 const usePlanetState = () => {
     const [water, setWater] = useState(2);
-    const [temperature, setTemperature] = useState();
+    const [temperature, setTemperature] = useState(2);
     const [oxygen, setOxygen] = useState(2);
 
     const [habitability, sethabitability] = useState(6);
@@ -18,7 +18,6 @@ const usePlanetState = () => {
         const computed = 'xxx';
         sethabitability(computed)
     }, [water, temperature, oxygen]);
-
 
     return {
         water,
