@@ -11,7 +11,7 @@ canvas {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: url('assets/space-bg.jpg');
+  background-image: url('assets/space-bg.gif');
 }
 
 .userControls {
@@ -23,6 +23,7 @@ canvas {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  z-index: 999;
 }
 
 code {
