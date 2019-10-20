@@ -31,6 +31,8 @@ const Mountain = ( { water, temperature, oxygen } ) => {
             mountainTexture = normalMountainTexture;
             break;
         case 3:
+            mountainTexture = fireMountainTexture;
+            break;
         case 4:
             mountainTexture = fireMountainTexture;
             break;
