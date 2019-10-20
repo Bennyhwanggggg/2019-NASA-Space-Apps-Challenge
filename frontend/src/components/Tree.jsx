@@ -15,7 +15,26 @@ const fiveTreeTexture = PIXI.Texture.from(fiveTree);
 const Tree = ( { water, temperature, oxygen } ) => {
     var habitabilityScore = calculateHabitability(water, temperature, oxygen);
 
-    const textures = [threeTreeTexture];
+    let treeTexture;
+    habitabilityScore = Math.floor(habitabilityScore);
+    switch (habitabilityScore) {
+        case 0:
+            treeTexture = oneTreeTexture;
+            break;
+        case 1:
+        case 2:
+            treeTexture = threeTreeTexture;
+            break;
+        case 3:
+        case 4:
+            treeTexture = fiveTreeTexture;
+            break;
+        default:
+            treeTexture = threeTreeTexture;
+    }
+
+
+    const textures = [treeTexture];
 
     treeConfig.sort((a, b) => a.position.y - b.position.y);
     const treeComponents = treeConfig.map(({ position: {x, y} }) => 

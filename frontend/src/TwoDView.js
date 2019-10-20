@@ -9,7 +9,6 @@ import Tree from './components/Tree';
 import Mountain from './components/Mountains';
 
 const redSky = 0x524444;
-const greySky = 0xfeffeb;
 const normalSky = 0x9be3fb;
 const waterSky = 0xe4eef9;
 const iceSky = 0x81cbe4;
@@ -24,19 +23,17 @@ const TwoDView = ( { water, temperature, oxygen, setShow2DView }) => {
     habitabilityScore = Math.floor(habitabilityScore);
     switch (habitabilityScore) {
         case 0:
-            skyColor = redSky;
+            skyColor = iceSky;
             break;
         case 1:
-            skyColor = greySky;
+            skyColor = waterSky;
             break;
         case 2:
             skyColor = normalSky;
             break;
         case 3:
-            skyColor = waterSky;
-            break;
         case 4:
-            skyColor = iceSky;
+            skyColor = redSky;
             break;
         default:
             skyColor = normalSky;
@@ -69,12 +66,23 @@ const TwoDView = ( { water, temperature, oxygen, setShow2DView }) => {
                         transform: 'translate(-50%, -50%)'
                     }}
             >
-                <Mountain/>
+                <Mountain
+                    water={water}
+                    temperature={temperature}
+                    oxygen={oxygen}
+                />
                 <Background
+                    water={water}
+                    temperature={temperature}
+                    oxygen={oxygen}
                     width={canvas.width}
                     height={canvas.height}
                 />
-                <Tree/>
+                <Tree
+                    water={water}
+                    temperature={temperature}
+                    oxygen={oxygen}
+                />
                 <Chicken
                     amount={chicken}
                 />

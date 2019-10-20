@@ -16,7 +16,8 @@ export const calculateHabitability = (water, temperature, oxygen) => {
     } else if (oxygen > 4) {
         oxygen = 4
     }
-    return 3 * water / 10 + 3 * temperature / 10 + 3 * oxygen / 10
+    console.log((water + temperature + oxygen) / 3)
+    return (water + temperature + oxygen) / 3
 }
 
 export const getAnimalHabitation = (water, temperature, oxygen) => {

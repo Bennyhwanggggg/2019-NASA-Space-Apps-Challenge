@@ -6,7 +6,7 @@ import { mountainConfig } from '../landScapePositionConfig';
 import iceMountain from '../assets/2DLandScapes/iceberg.png';
 import normalMountain from '../assets/2DLandScapes/normal.png';
 import rockMountain from '../assets/2DLandScapes/rock_mountain.png';
-import fireMountain from '../assets/2DLandScapes/valcano.png';
+import fireMountain from '../assets/2DLandScapes/volcano.png';
 
 const iceMountainTexture = PIXI.Texture.from(iceMountain);
 const rockMountainTexture = PIXI.Texture.from(rockMountain);
@@ -14,19 +14,28 @@ const fireMountainTexture = PIXI.Texture.from(fireMountain);
 const normalMountainTexture = PIXI.Texture.from(normalMountain);
 
 
-const Mountain = ( { temperature } ) => {
+const Mountain = ( { water, temperature, oxygen } ) => {
+
+    var habitabilityScore = calculateHabitability(water, temperature, oxygen);
+
+    habitabilityScore = Math.floor(habitabilityScore);
     let mountainTexture;
-    switch (temperature) {
-        case temperature <= 1:
+    switch (habitabilityScore) {
+        case 0:
             mountainTexture = iceMountainTexture;
             break;
-        case temperature <= 2:
+        case 1:
             mountainTexture = rockMountainTexture;
             break;
-        case temperature < 3:
+        case 2:
             mountainTexture = normalMountainTexture;
-        default:
+            break;
+        case 3:
+        case 4:
             mountainTexture = fireMountainTexture;
+            break;
+        default:
+            mountainTexture = normalMountainTexture;
     }
 
     const textures = [mountainTexture];
