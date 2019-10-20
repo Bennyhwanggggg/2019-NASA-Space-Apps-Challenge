@@ -5,6 +5,7 @@ import waterSrc from '../assets/water.png';
 import iceSrc from '../assets/ice.png';
 import fireSrc from '../assets/fire.png';
 import rockSrc from '../assets/rock.png';
+import normalSrc from '../assets/normalGOT.png';
 
 const getTexture = (temperature) => {
     const textureLoader = new THREE.TextureLoader();
@@ -18,6 +19,10 @@ const getTexture = (temperature) => {
     }
 
     if (temperature < 3) {
+        return textureLoader.load(normalSrc);
+    }
+
+    if (temperature < 4) {
         return textureLoader.load(rockSrc);
     }
 
