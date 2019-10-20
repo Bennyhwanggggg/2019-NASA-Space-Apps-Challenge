@@ -1,5 +1,5 @@
 import React from 'react';
-import { Stage, } from '@inlet/react-pixi';
+import { Stage } from '@inlet/react-pixi';
 import Background from './components/Background';
 import { getAnimalHabitation, calculateHabitability } from './core';
 import Chicken from './components/Chicken';

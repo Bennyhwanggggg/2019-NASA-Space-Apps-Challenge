@@ -37,7 +37,7 @@ const UserControls = (props) => {
             return setter(max);
         }
 
-        setter(parseInt(value));
+        setter(value);
     };
 
     return (
@@ -49,7 +49,7 @@ const UserControls = (props) => {
                     id="water"
                     min="0"
                     max="4"
-                    step="1"
+                    step="0.5"
                     name="water"
                     value={water}
                     onChange={handleChange}
@@ -61,8 +61,8 @@ const UserControls = (props) => {
                     type="range"
                     id="temperature"
                     min="0"
-                    max="3"
-                    step="1"
+                    max="4"
+                    step="0.5"
                     name="temperature"
                     value={temperature}
                     onChange={handleChange}
@@ -74,8 +74,8 @@ const UserControls = (props) => {
                     type="range"
                     id="oxygen"
                     min="0"
-                    max="3"
-                    step="1"
+                    max="4"
+                    step="0.5"
                     name="oxygen"
                     value={oxygen}
                     onChange={handleChange}

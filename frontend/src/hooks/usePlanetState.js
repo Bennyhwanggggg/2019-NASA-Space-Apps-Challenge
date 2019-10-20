@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 export const STATE_BOUNDS = {
     water: [0, 4],
     temperature: [0, 4],
-    oxygen: [0, 3],
+    oxygen: [0, 4],
 };
 
 const usePlanetState = () => {
