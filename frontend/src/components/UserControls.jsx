@@ -42,7 +42,7 @@ const UserControls = (props) => {
 
     return (
         <div className="userControls">
-            <div>
+            <div class="inputLint">
                 <label htmlFor="water">water  </label>
                 <input
                     type="range"
@@ -55,7 +55,7 @@ const UserControls = (props) => {
                     onChange={handleChange}
                 />
             </div>
-            <div>
+            <div class="inputLint">
                 <label for="temperature">temperatrue  </label>
                 <input
                     type="range"
@@ -68,8 +68,8 @@ const UserControls = (props) => {
                     onChange={handleChange}
                 />
             </div>
-            <div>
-                <label for="oxygen">oxygen: </label>
+            <div class="inputLint">
+                <label for="oxygen">oxygen </label>
                 <input
                     type="range"
                     id="oxygen"

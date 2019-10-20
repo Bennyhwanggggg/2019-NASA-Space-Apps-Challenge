@@ -1,3 +1,5 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
 html,
 body,
 #root,
@@ -13,8 +15,17 @@ canvas {
   -moz-osx-font-smoothing: grayscale;
   background-image: url('assets/space-bg.gif');
 }
-
+.inputLint {
+  display: flex;
+  padding-bottom: 10px;
+  justify-content: space-between;
+}
+input {
+  margin-left: 10px;
+}
 .userControls {
+  font-family: 'Open Sans',serif;
+  text-transform: uppercase;
   background: rgba(255,255,255, 0.9);
   position: fixed;
   top: 30px;
@@ -24,6 +35,25 @@ canvas {
   flex-direction: column;
   justify-content: center;
   z-index: 999;
+}
+button {
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    color: #494949 !important;
+    text-transform: uppercase;
+    text-decoration: none;
+    background: #ffffff;
+    padding: 10px 20px;
+    border: 1.5px solid #7e7e7e !important;
+    display: inline-block;
+    transition: all 0.4s ease 0s;
+}
+button:hover{
+    color: #ffffff !important;
+    background: #f6b93b;
+    border-color: #f6b93b !important;
+    transition: all 0.4s ease 0s;
 }
 
 code {
