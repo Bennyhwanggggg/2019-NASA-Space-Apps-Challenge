@@ -48,9 +48,9 @@ const AIButton = (props) => {
             setTemperature(temperature+temperatureChange);
             setOxygen(oxygen+oxygenChange);
         } catch (err) {
-            setWater(water+Math.random());
-            setTemperature(temperature+Math.random());
-            setOxygen(oxygen+Math.random());
+            setWater(water+1);
+            setTemperature(temperature+1);
+            setOxygen(oxygen+1);
         }
 
         setIsAnalyzing(false);

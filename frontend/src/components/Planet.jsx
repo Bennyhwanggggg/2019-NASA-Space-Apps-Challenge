@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import * as THREE from 'three';
 import { a } from 'react-spring/three';
 import waterSrc from '../assets/water.png';
