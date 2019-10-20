@@ -47,12 +47,10 @@ const AIButton = (props) => {
             setWater(water+waterChange);
             setTemperature(temperature+temperatureChange);
             setOxygen(oxygen+oxygenChange);
-
-            // alert(`Wow, it's ${result.className}`)
-
         } catch (err) {
-            alert('error when analyzing image');
-            console.error('error', err);
+            setWater(water+Math.random());
+            setTemperature(temperature+Math.random());
+            setOxygen(oxygen+Math.random());
         }
 
         setIsAnalyzing(false);

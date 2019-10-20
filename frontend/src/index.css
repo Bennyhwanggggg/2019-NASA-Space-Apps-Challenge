@@ -12,15 +12,13 @@ canvas {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-image: url('assets/space-bg.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
 }
 
 .userControls {
   background: rgba(255,255,255, 0.9);
   position: fixed;
-  top: 0;
-  left:0;
+  top: 30px;
+  left: 30px;
   padding: 30px;
   display: flex;
   flex-direction: column;
