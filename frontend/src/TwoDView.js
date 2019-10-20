@@ -19,7 +19,6 @@ const TwoDView = ( { water, temperature, oxygen, setShow2DView }) => {
     var { chicken, cow, bird } = getAnimalHabitation(water, temperature, oxygen);
 
     let skyColor;
-
     habitabilityScore = Math.floor(habitabilityScore);
     switch (habitabilityScore) {
         case 0:

@@ -1,7 +1,6 @@
 import React from 'react';
 import { STATE_BOUNDS } from '../hooks/usePlanetState';
 import AIButton from './AIButton';
-import debounce from 'lodash/debounce';
 
 const UserControls = (props) => {
     const {

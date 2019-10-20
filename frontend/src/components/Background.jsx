@@ -20,8 +20,10 @@ const Background = ( { water, temperature, oxygen, width, height } ) => {
                 backgroundImage = rockLand;
             break;
         case 2:
-        case 3:
                 backgroundImage = greenLand;
+                break
+        case 3:
+                backgroundImage = yellowLand;
             break;
         case 4:
                 backgroundImage = yellowLand;
