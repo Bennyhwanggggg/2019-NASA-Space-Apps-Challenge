@@ -45,21 +45,21 @@ export const manipulatePlanet = (predictResult) => {
     const { className } = predictResult
 
     if (Junks.includes(className)) {
-        water -= 1;
-        oxygen -= 1;
-        temperature += 1;
+        water -= 1.2;
+        oxygen -= 1.1;
+        temperature -= 0.6;
     } else if (LifeStocks.includes(className)) {
-        water -= 1;
-        oxygen += 1;
-        temperature -= 1
+        water += 1.3;
+        oxygen += 0.8;
+        temperature += 1.1;
     } else if (Plantations.includes(className)) {
-        water += 1;
-        oxygen += 1;
-        temperature -= 1;
+        water -= 0.6;
+        oxygen += 0.8;
+        temperature -= 0.7;
     } else {
-        water += 1;
-        oxygen -= 1;
-        temperature += 1;
+        water += Math.random();
+        oxygen -= Math.random();
+        temperature += Math.random();
     }
 
     return {
