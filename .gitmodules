@@ -1,0 +1,3 @@
+[submodule "Food-Classifier-Server"]
+	path = Food-Classifier-Server
+	url = https://github.com/Bennyhwanggggg/Food-Classifier-Server
